@@ -1,6 +1,5 @@
 import re
 import streamlit as st
-import pyperclip
 
 def process_string(input_str):
     # Convert all letters to lowercase
@@ -20,8 +19,8 @@ def main():
     if st.button("Process"):
         processed_str = process_string(input_str)
         st.write("Processed String:", processed_str)
-    if st.button("Copy"):
-        pyperclip.copy(processed_str)
+    if st.button("Copy to Clipboard"):
+        st.write(processed_str)
         st.write("String copied to clipboard!")
 
 if __name__ == "__main__":
